@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Caveat+Brush");
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker");
+
+/* * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+} */
+
+:root {
+  --primary-blue-color: #514cb9;
+  --primary-orange-color: #ea6227;
+  --primary-grey-color: #8a9194;
+  --light-orange-color: #f2a51a;
+  --light-mint-color: #b9ebcc;
+  --light-grey-color: #eff5f5;
+  --danger-color: #dc3535;
+  --success-color: #54b435;
+  --white-color: #fff;
+  /* other */
+  --primary-color: #047aed;
+  --secondary-color: #1c3fa8;
+  --dark-color: #002240;
+  --light-color: #f4f4f4;
+  --hepto-nav: #121c57;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--white-color);
+  line-height: 1.6;
+}
+h1,
+h2 {
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 10px 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 10px 0;
+  
+}
+
+img {
+  max-width: fit-content;
+}
+
+.square-holder {
+  padding: 30px;
+  /* coloro for border b4-*/
+  border: 1px solid #cecece ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  background-color: #fff;
+  min-height: 200px;
+}
+
+.square-holder img {
+  max-width: 100%;
+  /* filter: grayscale(100%);
+  transition: all 0.3s; */
+}
+
+.square-holder:hover img {
+  filter: none;
+}
+
+
+.fot-li {
+  margin-right: 1rem;
+}
+
+.fot-li li a {
+  margin: 3px 10px;
+  font-size: xx-large;
+  color: #fd7e14;
+}
+
+.fot-li li a::hoover {
+  
+  color: #070A52;
+}
+
+.about {
+  margin-top: 10px;
+  /* background-color: var(--white-color); */
+}
+
+.about h1 {
+  font-weight: bold;
+}
+
+.about p {
+  font-size: 20px;
+}
+
+
+/* mission vission values */
+.mission {
+  background-color:#fff;
+}
+.mission .grid {
+  padding: 30px;
+  background-color: #fff;
+}
+
+
+.mission .grid > *:first-child {
+  grid-column: 1 / span 3;
+}
+
+.mission .grid > *:nth-child(2) {
+  grid-column: 1 / span 2;
+}
+.mission h2 {
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+.mission p {
+  font-size: 18px;
+}
+
+
+/* media max-width 768px */
+
+@media (max-width: 768px) {
+  .mission.grid.grid-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    padding: 5px;
+  }
+  .container.grid#lift {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  .mission .grid > *:first-child {
+    grid-column: 1 / span 3;
+  }
+  .mission .grid > *:nth-child(2) {
+    grid-column: 1 / span 3;
+  }
+  .mission .grid > *:nth-child(3) {
+    grid-column: 1 / span 3;
+  }
+}
