@@ -22,7 +22,7 @@ function App() {
       <Route path='/strategy' Component={Strategy } />
       <Route path='/gallery' Component={Library } />
       <Route path='/blog' Component={Blog } />
-      <Route path='/single-post' Component={SinglePost } />
+      <Route path='/blog/:id' Component={SinglePost } />
       {/* <Route path='/donate' Component={Donate } /> */}
       </Routes>
 
