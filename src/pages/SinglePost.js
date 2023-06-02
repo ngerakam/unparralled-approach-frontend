@@ -49,26 +49,13 @@ function SinglePost() {
 
                             <div className="row align-items-center mb-4">
                             <div className="col-lg-6 text-center text-lg-start mb-3 m-lg-0">
-                                <img src="https://mdbootstrap.com/img/Photos/Avatars/img (23).jpg" className="rounded-5 shadow-1-strong me-2"
+                                <img src="" className="rounded-5 shadow-1-strong me-2"
                                 height="35" alt="" loading="lazy" />
                                 <span> Published <u>{readable_date}</u> by</span>
                                 <a href="" className="text-dark">{author}</a>
                             </div>
 
-                            {/* <div className="col-lg-6 text-center text-lg-end">
-                                <button type="button" className="btn btn-primary px-3 me-1" style={{backgroundColor: "#3b5998"}}>
-                                <i className="fab fa-facebook-f"></i>
-                                </button>
-                                <button type="button" className="btn btn-primary px-3 me-1" style={{backgroundColor: "#55acee"}}>
-                                <i className="fab fa-twitter"></i>
-                                </button>
-                                <button type="button" className="btn btn-primary px-3 me-1" style={{backgroundColor: "#0082ca"}}>
-                                <i className="fab fa-linkedin"></i>
-                                </button>
-                                <button type="button" className="btn btn-primary px-3 me-1">
-                                <i className="fas fa-comments"></i>
-                                </button>
-                            </div> */}
+               
                             </div>
                         </section>
                         {/* <!--Section: Post data-mdb--> */}
@@ -98,118 +85,7 @@ function SinglePost() {
                         </section>
                         {/* <!--Section: Share buttons--> */}
 
-                        {/* <!--Section: Author--> */}
-                        <section className="border-bottom mb-4 pb-4">
-                            <div className="row">
-                            <div className="col-3">
-                                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(23).jpg"
-                                className="img-fluid shadow-1-strong rounded-5" alt="" />
-                            </div>
 
-                            <div className="col-9">
-                                <p className="mb-2"><strong>Anna Maria Doe</strong></p>
-                                <a href="" className="text-dark"><i className="fab fa-facebook-f me-1"></i></a>
-                                <a href="" className="text-dark"><i className="fab fa-twitter me-1"></i></a>
-                                <a href="" className="text-dark"><i className="fab fa-linkedin me-1"></i></a>
-                                <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio est ab iure
-                                inventore dolorum consectetur? Molestiae aperiam atque quasi consequatur aut?
-                                Repellendus alias dolor ad nam, soluta distinctio quis accusantium!
-                                </p>
-                            </div>
-                            </div>
-                        </section>
-                        {/* <!--Section: Author--> */}
-
-                        {/* <!--Section: Comments--> */}
-                        <section className="border-bottom mb-3">
-                            <p className="text-center"><strong>Comments: 3</strong></p>
-
-                            {/* <!-- Comment --> */}
-                            <div className="row mb-4">
-                            <div className="col-2">
-                                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(24).jpg"
-                                className="img-fluid shadow-1-strong rounded-5" alt="" />
-                            </div>
-
-                            <div className="col-10">
-                                <p className="mb-2"><strong>Marta Dolores</strong></p>
-                                <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio est ab iure
-                                inventore dolorum consectetur? Molestiae aperiam atque quasi consequatur aut?
-                                Repellendus alias dolor ad nam, soluta distinctio quis accusantium!
-                                </p>
-                            </div>
-                            </div>
-
-                            {/* <!-- Comment --> */}
-                            <div className="row mb-4">
-                            <div className="col-2">
-                                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(25).jpg"
-                                className="img-fluid shadow-1-strong rounded-5" alt="" />
-                            </div>
-
-                            <div className="col-10">
-                                <p className="mb-2"><strong>Valeria Groove</strong></p>
-                                <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio est ab iure
-                                inventore dolorum consectetur? Molestiae aperiam atque quasi consequatur aut?
-                                Repellendus alias dolor ad nam, soluta distinctio quis accusantium!
-                                </p>
-                            </div>
-                            </div>
-
-                            {/* <!-- Comment --> */}
-                            <div className="row mb-4">
-                            <div className="col-2">
-                                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(26).jpg"
-                                className="img-fluid shadow-1-strong rounded-5" alt="" />
-                            </div>
-
-                            <div className="col-10">
-                                <p className="mb-2"><strong>Antonia Velez</strong></p>
-                                <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio est ab iure
-                                inventore dolorum consectetur? Molestiae aperiam atque quasi consequatur aut?
-                                Repellendus alias dolor ad nam, soluta distinctio quis accusantium!
-                                </p>
-                            </div>
-                            </div>
-                        </section>
-                        {/* <!--Section: Comments--> */}
-
-                        {/* <!--Section: Reply--> */}
-                        <section>
-                            <p className="text-center"><strong>Leave a reply</strong></p>
-
-                            <form>
-                            {/* <!-- Name input --> */}
-                            <div className="form-outline mb-4">
-                                <input type="text" id="form4Example1" className="form-control" />
-                                <label className="form-label" htmlFor="form4Example1">Name</label>
-                            </div>
-
-                            {/* <!-- Email input --> */}
-                            <div className="form-outline mb-4">
-                                <input type="email" id="form4Example2" className="form-control" />
-                                <label className="form-label" htmlFor="form4Example2">Email address</label>
-                            </div>
-
-                            {/* <!-- Message input --> */}
-                            <div className="form-outline mb-4">
-                                <textarea className="form-control" id="form4Example3" rows="4"></textarea>
-                                <label className="form-label" htmlFor="form4Example3">Text</label>
-                            </div>
-
-                            
-
-                            {/* <!-- Submit button --> */}
-                            <button type="submit" className="btn bg-hepto-blue btn-block mb-4">
-                                Publish
-                            </button>
-                            </form>
-                        </section>
-                        {/* <!--Section: Reply--> */}
                         </div>
                         {/* <!--Grid column--> */}
 
