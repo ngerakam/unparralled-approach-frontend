@@ -5,7 +5,7 @@ function NavBar() {
         <nav className="navbar navbar-expand-sm bg-hepto-blue">
     <div className="container-fluid">
       <Link className="navbar-brand" to="/">
-        <div className='bg-light'><img src={logo} /></div>
+        <img src={logo} />
       </Link>
           <button
           className="navbar-toggler bg-hepto-orange"

@@ -51,7 +51,7 @@ function SinglePost() {
                             <div className="col-lg-6 text-center text-lg-start mb-3 m-lg-0">
                                 <img src="" className="rounded-5 shadow-1-strong me-2"
                                 height="35" alt="" loading="lazy" />
-                                <span> Published <u>{readable_date}</u> by</span>
+                                <span> Published <u>{readable_date}</u> by </span>
                                 <a href="" className="text-dark">{author}</a>
                             </div>
 
@@ -93,30 +93,10 @@ function SinglePost() {
                         <div className="col-md-4 mb-4">
                         {/* <!--Section: Sidebar--> */}
                         <section className="sticky-top" style={{top: "80px"}}>
-                            {/* <!--Section: Ad--> */}
-                            {/* <section className="text-center border-bottom pb-4 mb-4">
-                            <div className="bg-image hover-overlay ripple mb-4">
-                                <img
-                                src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/content/en/_mdb5/standard/about/assets/mdb5-about.webp"
-                                className="img-fluid" />
-                                <a href="https://mdbootstrap.com/docs/standard/" target="_blank">
-                                <div className="mask" style={{backgroundColor: "rgba(57, 192, 237, 0.2)"}}></div>
-                                </a>
-                            </div>
-                            <h5>Material Design htmlFor Bootstrap 5</h5>
-
-                            <p>
-                                500+ components, free templates, 1-min installation, extensive tutorial, huge
-                                community. MIT license - free htmlFor personal & commercial use
-                            </p>
-                            <a role="button" className="btn bg-hepto-blue" href="https://mdbootstrap.com/docs/standard/"
-                                target="_blank">Download htmlFor free<i className="fas fa-download ms-2"></i></a>
-                            </section> */}
-                            {/* <!--Section: Ad--> */}
 
                             {/* <!--Section: Video--> */}
-                            <section className="text-center">
-                            <h5 className="mb-4">{name}</h5>
+                            <section className={video_url? "text-center" : "hidden"}>
+                             <h5 className={video_url? "mb-4" : "hidden"}>{name}</h5>
 
                             <div className="embed-responsive embed-responsive-16by9 shadow-4-strong">
                                 <iframe className="embed-responsive-item rounded-5" src={video_url}
