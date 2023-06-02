@@ -83,7 +83,7 @@ function Blog() {
                 </div>
             </div>
 
-            <Pagination itemsCount = {10} pageSize={3} currentPage={0} onPageChange={onPageChange}/>
+            <Pagination itemsCount = {9} pageSize={3} currentPage={0} onPageChange={onPageChange}/>
 
             <Footer />
         </React.Fragment>
