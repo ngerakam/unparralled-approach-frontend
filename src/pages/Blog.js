@@ -74,7 +74,7 @@ function Blog() {
         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
             {arr.map((posts) =>{
-                return <ItemBlog key={posts.id} title={posts.title} media={posts.media} content={posts.content} />
+                return <ItemBlog key={posts.id} title={posts.title} media={posts.media} excerpt={posts.excerpt} id={posts.id} />
             }) }
 
 
