@@ -1,11 +1,17 @@
 import React from 'react'
-// import featuret  from '../../images/FA.JPG';
-import _ from 'lodash';
+import { Link } from 'react-router-dom';
+
+
+
+
 
 function ItemBlog(props) {
-  const {title , media, content } = props;
+  const {id , title , media, excerpt } = props;
 
-  const truncatedText = _.slice(content,0,75)
+  const getBlog = (id) =>{
+    return <Link  />;
+  }
+
     return ( 
     <>
       <div className="col">
@@ -14,9 +20,12 @@ function ItemBlog(props) {
 
             <div className="card-body">
               <h5>{title}</h5>
-              <p className="card-text">{truncatedText}</p>
+              
+              <div className="card-text" dangerouslySetInnerHTML={{ __html: excerpt }}/>
+
+
               <div className="d-flex justify-content-between align-items-center">
-              <button type="button" className="btn btn-lg bg-hepto-orange">View</button>
+              <Link to={`/blog/${id}`} className="btn btn-lg bg-hepto-orange" >View</Link>
                 
               </div>
             </div>

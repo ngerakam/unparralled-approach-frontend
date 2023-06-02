@@ -1,15 +1,37 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import NavBar from '../components/NavBar/NavBar'
 import Footer from '../components/Footer/Footer'
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 function SinglePost() {
+    const { id } = useParams()
+    const [article , setArticle ] = useState({});
+    const [mymedia , setMyMedia ] = useState({});
+
+    useEffect(() =>{
+       getArticle(id)
+    },[]);
+
+    const  getArticle = async (id) =>{
+       await axios.get('http://127.0.0.1:8000/api/posts/' + `${id}`).then((response) =>{
+            setArticle(response.data)
+            setMyMedia(response.data.media)
+       });
+    }
+
+    const {title , author, content, excerpt, publication_date, reads, media, category, related_post  } = article
+    const { name, alt_text, media_type, video_url, image,document, media_post} = mymedia
+
+    const readable_date = new Date(publication_date).toDateString();
+    console.log(mymedia)
     return (  
         <React.Fragment>
             <NavBar />
 
                 {/* <!-- Jumbotron --> */}
                 <div id="intro" className="p-5 text-center bg-light">
-                <h1 className="mb-0 h4">This is a long title of the article</h1>
+                <h1 className="mb-0 h4">{title}</h1>
                 </div>
                 {/* <!-- Jumbotron --> */}
 
@@ -22,18 +44,18 @@ function SinglePost() {
                         <div className="col-md-8 mb-4">
                         {/* <!--Section: Post data-mdb--> */}
                         <section className="border-bottom mb-4">
-                            <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(144).jpg"
+                            <img src={image}
                             className="img-fluid shadow-2-strong rounded-5 mb-4" alt="" />
 
                             <div className="row align-items-center mb-4">
                             <div className="col-lg-6 text-center text-lg-start mb-3 m-lg-0">
                                 <img src="https://mdbootstrap.com/img/Photos/Avatars/img (23).jpg" className="rounded-5 shadow-1-strong me-2"
                                 height="35" alt="" loading="lazy" />
-                                <span> Published <u>15.07.2020</u> by</span>
-                                <a href="" className="text-dark">Anna</a>
+                                <span> Published <u>{readable_date}</u> by</span>
+                                <a href="" className="text-dark">{author}</a>
                             </div>
 
-                            <div className="col-lg-6 text-center text-lg-end">
+                            {/* <div className="col-lg-6 text-center text-lg-end">
                                 <button type="button" className="btn btn-primary px-3 me-1" style={{backgroundColor: "#3b5998"}}>
                                 <i className="fab fa-facebook-f"></i>
                                 </button>
@@ -46,58 +68,14 @@ function SinglePost() {
                                 <button type="button" className="btn btn-primary px-3 me-1">
                                 <i className="fas fa-comments"></i>
                                 </button>
-                            </div>
+                            </div> */}
                             </div>
                         </section>
                         {/* <!--Section: Post data-mdb--> */}
 
                         {/* <!--Section: Text--> */}
                         <section>
-                            <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio sapiente molestias
-                            consectetur. Fuga nulla officia error placeat veniam, officiis rerum laboriosam
-                            ullam molestiae magni velit laborum itaque minima doloribus eligendi! Lorem ipsum,
-                            dolor sit amet consectetur adipisicing elit. Optio sapiente molestias consectetur.
-                            Fuga nulla officia error placeat veniam, officiis rerum laboriosam ullam molestiae
-                            magni velit laborum itaque minima doloribus eligendi!
-                            </p>
-
-                            <p><strong>Optio sapiente molestias consectetur?</strong></p>
-
-                            <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum architecto ex ab aut
-                            tempora officia libero praesentium, sint id magnam eius natus unde blanditiis. Autem
-                            adipisci totam sit consequuntur eligendi.
-                            </p>
-
-                            <p className="note note-light">
-                            <strong>Note:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Optio odit consequatur porro sequi ab distinctio modi. Rerum cum dolores sint,
-                            adipisci ad veritatis laborum eaque illum saepe mollitia ut voluptatum.
-                            </p>
-
-                            <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, libero repellat
-                            molestiae aperiam laborum aliquid atque magni nostrum, inventore perspiciatis
-                            possimus quia incidunt maiores molestias eaque nam commodi! Magnam, labore.
-                            </p>
-
-                            <img src="https://mdbootstrap.com/img/new/slides/041.jpg" className="img-fluid shadow-1-strong rounded-5 mb-4"
-                            alt="" />
-
-                            <ul>
-                            <li>Lorem</li>
-                            <li>Ipsum</li>
-                            <li>Dolor</li>
-                            <li>Sit</li>
-                            <li>Amet</li>
-                            </ul>
-
-                            <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, temporibus nulla
-                            voluptatibus accusantium sapiente doloremque. Doloribus ratione laboriosam culpa. Ab
-                            officiis quidem, debitis nostrum in accusantium dolore veritatis eius est?
-                            </p>
+                        <div dangerouslySetInnerHTML={{ __html: content }} />
                         </section>
                         {/* <!--Section: Text--> */}
 
@@ -240,7 +218,7 @@ function SinglePost() {
                         {/* <!--Section: Sidebar--> */}
                         <section className="sticky-top" style={{top: "80px"}}>
                             {/* <!--Section: Ad--> */}
-                            <section className="text-center border-bottom pb-4 mb-4">
+                            {/* <section className="text-center border-bottom pb-4 mb-4">
                             <div className="bg-image hover-overlay ripple mb-4">
                                 <img
                                 src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/content/en/_mdb5/standard/about/assets/mdb5-about.webp"
@@ -257,16 +235,16 @@ function SinglePost() {
                             </p>
                             <a role="button" className="btn bg-hepto-blue" href="https://mdbootstrap.com/docs/standard/"
                                 target="_blank">Download htmlFor free<i className="fas fa-download ms-2"></i></a>
-                            </section>
+                            </section> */}
                             {/* <!--Section: Ad--> */}
 
                             {/* <!--Section: Video--> */}
                             <section className="text-center">
-                            <h5 className="mb-4">Learn the newest Bootstrap 5</h5>
+                            <h5 className="mb-4">{name}</h5>
 
                             <div className="embed-responsive embed-responsive-16by9 shadow-4-strong">
-                                <iframe className="embed-responsive-item rounded-5" src="https://www.youtube.com/embed/c9B4TPnak1A"
-                                allowfullscreen></iframe>
+                                <iframe className="embed-responsive-item rounded-5" src={video_url}
+                                allowFullScreen />
                             </div>
                             </section>
                             {/* <!--Section: Video--> */}
