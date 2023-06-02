@@ -38,8 +38,10 @@ function BlogSideBar() {
             <div className="d-flex w-100 align-items-center justify-content-between">
               <strong className="mb-1">{post.title}</strong>
               <small>{readable_date(post.publication_date)}</small>
+              
             </div>
-            <div className="col-10 mb-1 small">{post.excerpt}</div>
+            <div className="col-10 mb-1 small" dangerouslySetInnerHTML={{ __html: post.excerpt }} />
+            
           </Link>
           
         
