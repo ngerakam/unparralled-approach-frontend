@@ -18,7 +18,7 @@ function Library() {
      },[]);
 
     const getImages = async () =>{
-        await axios.get('http://127.0.0.1:8000/api/media/').then((response) =>{
+        await axios.get('http://192.168.43.124:8088/api/media/').then((response) =>{
             setImages(response.data)
        });
     };

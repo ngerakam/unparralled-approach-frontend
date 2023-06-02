@@ -17,7 +17,7 @@ function Blog() {
     },[]);
 
     const  getPosts = async () =>{
-       await axios.get('http://127.0.0.1:8000/api/posts/').then((response) =>{
+       await axios.get('http://192.168.43.124:8088/api/posts/').then((response) =>{
             setPost(response.data)
        });
     }

@@ -14,7 +14,7 @@ function SinglePost() {
     },[]);
 
     const  getArticle = async (id) =>{
-       await axios.get('http://127.0.0.1:8000/api/posts/' + `${id}`).then((response) =>{
+       await axios.get('http://192.168.43.124:8088/api/posts/' + `${id}`).then((response) =>{
             setArticle(response.data)
             setMyMedia(response.data.media)
        });

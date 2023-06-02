@@ -8,9 +8,6 @@ import { Link } from 'react-router-dom';
 function ItemBlog(props) {
   const {id , title , media, excerpt } = props;
 
-  const getBlog = (id) =>{
-    return <Link  />;
-  }
 
     return ( 
     <>
